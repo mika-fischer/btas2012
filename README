@@ -1,0 +1,17 @@
+This repository contains parts of the code used in the paper:
+
+  Mika Fischer, Hazım K. Ekenel, Rainer Stiefelhagen
+  Analysis of Partial Least Squares for Pose-Invariant Face Recognition
+  IEEE International Conference on Biometrics: Theory, Applications and Systems,
+  Washington D.C., USA, September 2012.
+
+For more information about this paper, visit
+http://cvhci.anthropomatik.kit.edu/~mfischer/research/pls-analysis
+
+If you publish any work in which the code in this repository is used,
+please cite the paper above!
+
+In particular, the following parts of the code are included:
+ - Consistent cross-pose face alignment
+
+To build, you will need OpenCV and Boost and CMake.
