@@ -15,3 +15,6 @@ In particular, the following parts of the code are included:
  - Consistent cross-pose face alignment
 
 To build, you will need OpenCV and Boost and CMake.
+
+If you have questions or comments regarding the paper or the code in this
+repository, please don't hesitate to contact me: mika.fischer@kit.edu
