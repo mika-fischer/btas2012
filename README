@@ -1,3 +1,5 @@
+Introduction
+------------
 This repository contains parts of the code used in the paper:
 
   Mika Fischer, Hazım K. Ekenel, Rainer Stiefelhagen
@@ -14,7 +16,53 @@ please cite the paper above!
 In particular, the following parts of the code are included:
  - Consistent cross-pose face alignment
 
-To build, you will need OpenCV and Boost and CMake.
-
 If you have questions or comments regarding the paper or the code in this
 repository, please don't hesitate to contact me: mika.fischer@kit.edu
+
+Requirements
+------------
+To build, you will need OpenCV and Boost and CMake.
+
+Building under Windows (using Visual Studio 2010)
+-------------------------------------------------
+- Note: Instead of adding things to your PATH, you can also place the necessary
+  DLLs next to the btas2012aligner.exe binary. They are:
+  opencv_core242.dll, opencv_imgproc242.dll, opencv_highgui242.dll and tbb.dll
+
+- Install Intel TBB 4.0 update 3:
+  - http://threadingbuildingblocks.org/uploads/78/181/4.0%20update%203/tbb40_297oss_win.zip
+  - Extract to some directory
+  - Add the directory "<path to TBB>/bin/ia32/vc10" to your PATH
+
+- Install OpenCV 2.4.2:
+  - http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.2/OpenCV-2.4.2.exe/download
+  - You can also compile OpenCV from source if you have a compiler other than
+    Visual Studio 2010.
+
+- Install Boost 1.51.0:
+  - http://boostpro.com/download/boost_1_51_setup.exe
+  - Select the version of your compiler, and check "Multithreaded debug DLL",
+    "Multithreaded DLL", "Multithreaded" and "Multithreaded debug"
+  - You don't have to install "Source and documentation" and "Tools (source
+    and binary)"
+  - If your compiler is not listed, you can also compile Boost from source
+
+- Install CMake:
+  - http://www.cmake.org/files/v2.8/cmake-2.8.9-win32-x86.exe
+
+- Generate Visual Studio Project
+  - Start Cmake
+  - Set source path to the path where you downloaded/cloned the btas2012 repository
+  - Set build path to a different directory. For instance <path to btas2012>/build.win32
+  - Press "Configure"
+  - Select your compiler if necessary and press OK
+  - CMake will complain about not finding OpenCV
+  - Set OpenCV_DIR to <path where opencv was extracted>/build
+  - Press "Configure" again. Now everything should run through without errors.
+  - The directory containing the OpenCV DLLs must be added to your PATH
+    - OpenCV will tell you which one in the CMake output, for instance:
+      "You might need to add <path to opencv>\build\x86\vc10\bin to your PATH
+      to be able to run your applications."
+  - Press "Generate"
+
+- Open the generated Visual Studio solution file and build it
